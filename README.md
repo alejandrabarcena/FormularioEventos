@@ -1,20 +1,49 @@
-# 📝 Formulario con Validación de Eventos
+# 📝 Formulario de Registro a Evento (Versión Oficial)
 
-Este proyecto es un formulario de inscripción con validación usando JavaScript y manejo de eventos.
+Este es un proyecto simple de formulario web centrado en la validación de datos en tiempo real utilizando HTML, CSS y JavaScript. Desarrollado como parte del bootcamp de 4Geeks Academy.
 
-## 🚀 Tecnologías
-- HTML
-- CSS
-- JavaScript
+## 🎯 Objetivo
+Validar entradas de formulario (nombre, email, número de tarjeta, CVC, etc.) con feedback visual en tiempo real y mensaje de confirmación al completar correctamente el formulario.
 
-## 🎯 Funcionalidades
-- Validación de nombre, email, número de tarjeta, fecha de expiración y CVC
-- Feedback visual con colores y mensajes de error
-- Prevención de envío si hay datos incorrectos
+## 🚀 Tecnologías utilizadas
+- HTML5
+- CSS3 (con diseño centrado y responsive)
+- JavaScript (DOM y validación)
+- Íconos de FontAwesome
 
-## 🔍 ¿Cómo probar?
-1. Clona el repositorio
-2. Abre `index.html` en tu navegador
-3. Llena el formulario y presiona “Registrar”
+## 🔍 Funcionalidades
+- Validación visual en tiempo real por campo
+- Mensaje de éxito con animación suave
+- Diseño centrado y responsive
+- Colores accesibles y amigables
 
-Perfecto para practicar DOM + Programación Orientada a Eventos.
+
+## 📸 Vista previa
+# 📝 Formulario de pago
+
+Este es un proyecto simple de formulario web centrado en la validación de datos en tiempo real utilizando HTML, CSS y JavaScript. Desarrollado como parte del bootcamp de 4Geeks Academy.
+
+## 🎯 Objetivo
+Validar entradas de formulario (nombre, email, número de tarjeta, CVC, etc.) con feedback visual en tiempo real y mensaje de confirmación al completar correctamente el formulario.
+
+## 🚀 Tecnologías utilizadas
+- HTML5
+- CSS3 (con diseño centrado y responsive)
+- JavaScript (DOM y validación)
+- Íconos de FontAwesome
+
+## 🔍 Funcionalidades
+- Validación visual en tiempo real por campo
+- Mensaje de éxito con animación suave
+- Diseño centrado y responsive
+- Colores accesibles y amigables
+- Estructura clara para entrega oficial
+
+## 📸 Vista previa
+![preview](./assets/preview.png)
+
+## 👩‍💻 Autor
+Alejandra Bárcena
+
+
+
