@@ -1,40 +1,54 @@
 document.querySelector("#eventForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // 👈 Detiene el envío del formulario
+  e.preventDefault();
 
-  const name = document.querySelector("#name");
-  const email = document.querySelector("#email");
-  const date = document.querySelector("#date");
-  const errorBox = document.querySelector("#error-message");
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const cardNumber = document.getElementById("cardNumber");
+  const expiry = document.getElementById("expiry");
+  const cvc = document.getElementById("cvc");
+  const errorMessage = document.getElementById("errorMessage");
 
-  let valid = true;
+  let isValid = true;
   let messages = [];
 
-  // Limpiar errores anteriores
-  [name, email, date].forEach(input => input.classList.remove("invalid"));
-  errorBox.textContent = "";
+  // Reset estilos previos
+  [name, email, cardNumber, expiry, cvc].forEach(input => input.classList.remove("error"));
+  errorMessage.innerHTML = "";
 
   if (name.value.trim() === "") {
-    messages.push("El nombre es obligatorio.");
-    name.classList.add("invalid");
-    valid = false;
+    isValid = false;
+    name.classList.add("error");
+    messages.push("Nombre obligatorio.");
   }
 
   if (!email.value.includes("@")) {
-    messages.push("El correo debe ser válido.");
-    email.classList.add("invalid");
-    valid = false;
+    isValid = false;
+    email.classList.add("error");
+    messages.push("Email no válido.");
   }
 
-  if (!date.value) {
-    messages.push("Debes seleccionar una fecha.");
-    date.classList.add("invalid");
-    valid = false;
+  if (cardNumber.value.length !== 16 || isNaN(cardNumber.value)) {
+    isValid = false;
+    cardNumber.classList.add("error");
+    messages.push("Número de tarjeta debe tener 16 dígitos.");
   }
 
-  if (!valid) {
-    errorBox.textContent = messages.join(" ");
+  if (!expiry.value) {
+    isValid = false;
+    expiry.classList.add("error");
+    messages.push("Fecha de expiración requerida.");
+  }
+
+  if (cvc.value.length !== 3 || isNaN(cvc.value)) {
+    isValid = false;
+    cvc.classList.add("error");
+    messages.push("CVC debe tener 3 dígitos numéricos.");
+  }
+
+  if (!isValid) {
+    errorMessage.innerHTML = messages.join("<br>");
   } else {
-    alert("¡Formulario enviado con éxito!");
+    alert("Formulario enviado correctamente ✅");
     e.target.reset();
   }
 });
