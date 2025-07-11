@@ -1,82 +1,97 @@
 body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f9fc;
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #fffceb;
+  padding: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
-.form-container {
+.container {
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   max-width: 400px;
+  width: 90%;
 }
 
-form h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+h1 {
   text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 
 label {
   display: block;
-  margin: 10px 0 4px;
+  margin-bottom: 0.3rem;
   font-weight: bold;
-  font-size: 0.95rem;
+  color: #333;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 8px;
+  padding: 0.7rem;
   border: 2px solid #ccc;
-  transition: 0.2s;
+  border-radius: 8px;
+  transition: 0.3s ease all;
 }
 
 input:focus {
+  border-color: #007bff;
   outline: none;
-  border-color: #ffc107;
-  background-color: #fff8e1;
 }
 
 input.valid {
-  border-color: #28a745;
-  background-color: #e6ffed;
+  border-color: green;
 }
 
 input.invalid {
-  border-color: #dc3545;
-  background-color: #ffeaea;
+  border-color: red;
 }
 
 button {
   width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: white;
   border: none;
   border-radius: 8px;
-  background-color: #ffc107;
-  color: #000;
-  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #e0a800;
+  background-color: #0056b3;
 }
 
-.success-message {
+#successMsg {
+  margin-top: 1rem;
+  color: green;
   text-align: center;
-  margin-top: 15px;
-  color: #28a745;
   font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hidden {
   display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

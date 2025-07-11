@@ -25,5 +25,3 @@ Validar entradas de formulario (nombre, email, número de tarjeta, CVC, etc.) co
 ## 👩‍💻 Autor
 Alejandra Bárcena
 
-
-
