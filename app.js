@@ -1,26 +1,33 @@
-
 document.getElementById("payment-form").addEventListener("submit", function (e) {
   e.preventDefault();
-  const requiredFields = ["card", "cvc", "amount", "fname", "lname", "city", "state", "postal", "message"];
-  let valid = true;
 
-  requiredFields.forEach(id => {
-    const field = document.getElementById(id);
-    if (!field.value.trim()) {
-      field.parentElement.classList.add("error");
-      valid = false;
+  const inputs = document.querySelectorAll("input, select, textarea");
+  let allFilled = true;
+
+  inputs.forEach((input) => {
+    if (!input.value.trim()) {
+      input.style.backgroundColor = "#f8d7da";
+      allFilled = false;
     } else {
-      field.parentElement.classList.remove("error");
+      input.style.backgroundColor = "";
     }
   });
 
-  if (valid) {
-    alert("Payment submitted successfully!");
+  const alertBox = document.getElementById("alert");
+
+  if (!allFilled) {
+    alertBox.style.display = "block";
+    alertBox.innerText = "Some fields are missing";
   } else {
-    alert("Some fields are missing");
+    alertBox.style.display = "none";
+    alert("Formulario enviado exitosamente 🧾");
   }
 });
 
 document.getElementById("cancel").addEventListener("click", () => {
   document.getElementById("payment-form").reset();
+  document.getElementById("alert").style.display = "none";
+  document.querySelectorAll("input, select, textarea").forEach((el) => {
+    el.style.backgroundColor = "";
+  });
 });

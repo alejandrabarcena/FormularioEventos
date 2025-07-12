@@ -1,52 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Payment Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment form example</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <form id="payment-form">
-    <h2>Payment form example</h2>
-    <div class="row">
-      <label>Card #<input type="text" id="card" /></label>
-      <label>CVC #<input type="text" id="cvc" /></label>
-      <label>Amount<input type="text" id="amount" /></label>
-    </div>
-    <div class="row">
-      <label>First Name<input type="text" id="fname" /></label>
-      <label>Last Name<input type="text" id="lname" /></label>
-    </div>
-    <div class="row">
-      <label>City<input type="text" id="city" /></label>
-      <label>State
-        <select id="state">
-          <option value="">Pick a state</option>
-          <option>CDMX</option>
-          <option>Jalisco</option>
-          <option>Nuevo León</option>
-        </select>
-      </label>
-      <label>Postal Code<input type="text" id="postal" /></label>
-    </div>
-    <div class="row">
-      <span>We accept:</span>
-      <div class="cards">
-        <img src="https://img.icons8.com/ios-filled/50/visa.png" />
-        <img src="https://img.icons8.com/ios-filled/50/mastercard.png" />
-        <img src="https://img.icons8.com/ios-filled/50/discover.png" />
+  <div class="container">
+    <h1>Payment form example</h1>
+    <div id="alert"></div>
+
+    <form id="payment-form">
+      <div class="section">
+        <label for="card">Card #</label>
+        <input type="text" id="card" placeholder="XXXXXXXXXXXXXXXX" />
       </div>
-    </div>
-    <div class="row">
-      <label>Message<textarea id="message" placeholder="Add any notes here."></textarea></label>
-    </div>
-    <div class="buttons">
-      <button type="button" id="cancel">Cancel</button>
-      <button type="submit" id="send">Send</button>
-    </div>
-  </form>
-  <script src="app.js"></script>
+
+      <div class="row">
+        <div class="section">
+          <label for="cvc">CVC #</label>
+          <input type="text" id="cvc" placeholder="0000" />
+        </div>
+        <div class="section">
+          <label for="amount">Amount</label>
+          <input type="text" id="amount" placeholder="$ Amount" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="section">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" />
+        </div>
+        <div class="section">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="section">
+          <label for="city">City</label>
+          <input type="text" id="city" />
+        </div>
+        <div class="section">
+          <label for="state">State</label>
+          <select id="state">
+            <option value="">Pick a state</option>
+            <option value="CDMX">CDMX</option>
+            <option value="JAL">Jalisco</option>
+            <option value="NL">Nuevo León</option>
+          </select>
+        </div>
+        <div class="section">
+          <label for="zip">Postal Code</label>
+          <input type="text" id="zip" />
+        </div>
+      </div>
+
+      <div class="section">
+        <label>We accept:</label>
+        <div class="icons">
+          <img src="https://img.icons8.com/color/48/000000/visa.png"/>
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png"/>
+          <img src="https://img.icons8.com/color/48/000000/discover.png"/>
+        </div>
+      </div>
+
+      <div class="section">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Add any notes here."></textarea>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="cancel">Cancel</button>
+        <button type="submit" id="send">Send</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
