@@ -18,10 +18,10 @@ Validar entradas de formulario (nombre, email, número de tarjeta, CVC, etc.) co
 - Diseño centrado y responsive
 - Colores accesibles y amigables
 - Estructura clara para entrega oficial
-
 ## 📸 Vista previa
-![preview](./assets/preview.png)
 
-## 👩‍💻 Autor
+![Vista previa del formulario](./assets/preview.png)
+
+## 👩‍💻 Autora
+
 Alejandra Bárcena
-
