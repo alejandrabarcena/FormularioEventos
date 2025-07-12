@@ -22,6 +22,8 @@ Validar entradas del formulario (número de tarjeta, CVC, monto, nombre, direcci
 - 🧠 Estructura semántica para buena práctica
 
 ## 📸 Vista previa
+![preview](./vistaprevia.png)
+
 
 ## 👩‍💻 Autora
 
