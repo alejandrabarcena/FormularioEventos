@@ -1,6 +1,6 @@
 # 📝 Formulario de Pago
 
-Este es un proyecto simple de formulario web centrado en la validación de datos en tiempo real utilizando HTML, CSS y JavaScript. Desarrollado como parte del bootcamp de 4Geeks Academy.
+Este es un proyecto de formulario web centrado en la validación de datos en tiempo real utilizando HTML, CSS y JavaScript. Desarrollado como parte del bootcamp de 4Geeks Academy.
 
 ## 🎯 Objetivo
 
