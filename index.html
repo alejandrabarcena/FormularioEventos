@@ -1,50 +1,52 @@
+
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro al Evento</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <main class="container">
-      <form id="eventForm">
-        <h1><i class="fas fa-calendar-check"></i> Registro al Evento</h1>
-
-        <div class="form-group">
-          <label for="name">Nombre completo</label>
-          <input type="text" id="name" placeholder="Ej. Alejandra Bárcena" required />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" placeholder="Ej. ejemplo@mail.com" required />
-        </div>
-
-        <div class="form-group">
-          <label for="card">Número de tarjeta</label>
-          <input type="text" id="card" maxlength="16" placeholder="1234 5678 9012 3456" required />
-        </div>
-
-        <div class="form-group">
-          <label for="cvc">CVC</label>
-          <input type="text" id="cvc" maxlength="3" placeholder="123" required />
-        </div>
-
-        <div class="form-group">
-          <label for="date">Fecha</label>
-          <input type="date" id="date" required />
-        </div>
-
-        <button type="submit">Enviar <i class="fas fa-paper-plane"></i></button>
-        <p id="successMsg" class="hidden">✅ ¡Registro completado!</p>
-      </form>
-    </main>
-
-    <script src="app.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <form id="payment-form">
+    <h2>Payment form example</h2>
+    <div class="row">
+      <label>Card #<input type="text" id="card" /></label>
+      <label>CVC #<input type="text" id="cvc" /></label>
+      <label>Amount<input type="text" id="amount" /></label>
+    </div>
+    <div class="row">
+      <label>First Name<input type="text" id="fname" /></label>
+      <label>Last Name<input type="text" id="lname" /></label>
+    </div>
+    <div class="row">
+      <label>City<input type="text" id="city" /></label>
+      <label>State
+        <select id="state">
+          <option value="">Pick a state</option>
+          <option>CDMX</option>
+          <option>Jalisco</option>
+          <option>Nuevo León</option>
+        </select>
+      </label>
+      <label>Postal Code<input type="text" id="postal" /></label>
+    </div>
+    <div class="row">
+      <span>We accept:</span>
+      <div class="cards">
+        <img src="https://img.icons8.com/ios-filled/50/visa.png" />
+        <img src="https://img.icons8.com/ios-filled/50/mastercard.png" />
+        <img src="https://img.icons8.com/ios-filled/50/discover.png" />
+      </div>
+    </div>
+    <div class="row">
+      <label>Message<textarea id="message" placeholder="Add any notes here."></textarea></label>
+    </div>
+    <div class="buttons">
+      <button type="button" id="cancel">Cancel</button>
+      <button type="submit" id="send">Send</button>
+    </div>
+  </form>
+  <script src="app.js"></script>
+</body>
 </html>

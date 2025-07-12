@@ -1,42 +1,26 @@
-const form = document.getElementById("eventForm");
-const inputs = form.querySelectorAll("input");
-const successMsg = document.getElementById("successMsg");
 
-const validations = {
-  name: value => value.trim().length >= 3,
-  email: value => /\S+@\S+\.\S+/.test(value),
-  card: value => /^\d{16}$/.test(value),
-  cvc: value => /^\d{3}$/.test(value),
-  date: value => value !== ""
-};
+document.getElementById("payment-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const requiredFields = ["card", "cvc", "amount", "fname", "lname", "city", "state", "postal", "message"];
+  let valid = true;
 
-inputs.forEach(input => {
-  input.addEventListener("input", () => {
-    const isValid = validations[input.id](input.value);
-    input.classList.toggle("valid", isValid);
-    input.classList.toggle("invalid", !isValid);
+  requiredFields.forEach(id => {
+    const field = document.getElementById(id);
+    if (!field.value.trim()) {
+      field.parentElement.classList.add("error");
+      valid = false;
+    } else {
+      field.parentElement.classList.remove("error");
+    }
   });
+
+  if (valid) {
+    alert("Payment submitted successfully!");
+  } else {
+    alert("Some fields are missing");
+  }
 });
 
-form.addEventListener("submit", e => {
-  e.preventDefault();
-
-  let isFormValid = true;
-
-  inputs.forEach(input => {
-    const isValid = validations[input.id](input.value);
-    input.classList.toggle("valid", isValid);
-    input.classList.toggle("invalid", !isValid);
-    if (!isValid) isFormValid = false;
-  });
-
-  if (isFormValid) {
-    successMsg.classList.remove("hidden");
-    form.reset();
-    inputs.forEach(input => {
-      input.classList.remove("valid");
-    });
-  } else {
-    successMsg.classList.add("hidden");
-  }
+document.getElementById("cancel").addEventListener("click", () => {
+  document.getElementById("payment-form").reset();
 });
