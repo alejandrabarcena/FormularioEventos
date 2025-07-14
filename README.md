@@ -23,7 +23,9 @@ Validar entradas del formulario (número de tarjeta, CVC, monto, nombre, direcci
 
 ## 📸 Vista previa
 ![preview](./vistaprevia.png)
+
 https://alejandrabarcena.github.io/FormularioEventos/
+
 
 
 ## 👩‍💻 Autora

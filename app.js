@@ -1,33 +1,62 @@
-document.getElementById("payment-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const inputs = document.querySelectorAll("input, select, textarea");
-  let allFilled = true;
-
-  inputs.forEach((input) => {
-    if (!input.value.trim()) {
-      input.style.backgroundColor = "#f8d7da";
-      allFilled = false;
-    } else {
-      input.style.backgroundColor = "";
-    }
-  });
-
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("payment-form");
   const alertBox = document.getElementById("alert");
+  const cancelBtn = document.getElementById("cancel");
 
-  if (!allFilled) {
-    alertBox.style.display = "block";
-    alertBox.innerText = "Some fields are missing";
-  } else {
-    alertBox.style.display = "none";
-    alert("Formulario enviado exitosamente 🧾");
-  }
-});
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-document.getElementById("cancel").addEventListener("click", () => {
-  document.getElementById("payment-form").reset();
-  document.getElementById("alert").style.display = "none";
-  document.querySelectorAll("input, select, textarea").forEach((el) => {
-    el.style.backgroundColor = "";
+    const card = document.getElementById("card").value.trim();
+    const cvc = document.getElementById("cvc").value.trim();
+    const amount = document.getElementById("amount").value.trim();
+    const fname = document.getElementById("fname").value.trim();
+    const lname = document.getElementById("lname").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const state = document.getElementById("state").value;
+    const zip = document.getElementById("zip").value.trim();
+
+    if (
+      !card ||
+      !cvc ||
+      !amount ||
+      !fname ||
+      !lname ||
+      !city ||
+      !state ||
+      !zip
+    ) {
+      showAlert("Please fill out all required fields.", "error");
+      return;
+    }
+
+    if (card.length < 13 || card.length > 16) {
+      showAlert("Invalid card number.", "error");
+      return;
+    }
+
+    if (cvc.length < 3 || cvc.length > 4) {
+      showAlert("Invalid CVC code.", "error");
+      return;
+    }
+
+    if (isNaN(amount.replace(/[^0-9.-]+/g, ""))) {
+      showAlert("Amount must be a number.", "error");
+      return;
+    }
+
+    showAlert("✅ Registro completado correctamente.", "success");
+    form.reset();
   });
+
+  cancelBtn.addEventListener("click", () => {
+    form.reset();
+    alertBox.innerHTML = "";
+  });
+
+  function showAlert(message, type) {
+    alertBox.innerHTML = `<p class="${type}">${message}</p>`;
+    setTimeout(() => {
+      alertBox.innerHTML = "";
+    }, 4000);
+  }
 });
